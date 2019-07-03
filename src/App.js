@@ -4,9 +4,9 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 
 import HomeScreen from './screens/home'
-import { categoryResults } from './reducers'
+import { categoryResults, categorySelectResults } from './reducers'
 
-const store = createStore(combineReducers({categoryResults}), applyMiddleware(thunk))
+const store = createStore(combineReducers({categoryResults, categorySelectResults}), applyMiddleware(thunk))
 
 function App() {
   return (

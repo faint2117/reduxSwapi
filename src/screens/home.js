@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import DetailScreen from './detailScreen'
+import DetailElement from './detailElement'
 import { updateState} from '../Actions/index'
 
 class HomeScreen extends Component {
@@ -15,13 +16,15 @@ class HomeScreen extends Component {
   render() {
     return <div>
       <button onClick={() => this.props.updateState('planets')}>Planets</button>
-      <button>Spaceships</button>
-      <button>Vehicles</button>
-      <button>People</button>
-      <button>Films</button>
-      <button>Species</button>
+      <button onClick={() => this.props.updateState('starships')}>Starships</button>
+      <button onClick={() => this.props.updateState('vehicles')}>Vehicles</button>
+      <button onClick={() => this.props.updateState('people')}>People</button>
+      <button onClick={() => this.props.updateState('films')}>Films</button>
+      <button onClick={() => this.props.updateState('species')}>Species</button>
 
       <DetailScreen />
+
+      <DetailElement />
       
     </div>
   }

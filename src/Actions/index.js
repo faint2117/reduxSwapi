@@ -14,3 +14,15 @@ export function updateState(category) {
         })
     }
 }
+
+export function updateStateSelect(category) {
+    return async function(dispatch) {
+        const response = await fetch(category);
+        const result = await response.json()
+        
+        dispatch({
+            type: 'UPDATE_STATE_SELECT',
+            payload: result
+        })
+    }
+}
